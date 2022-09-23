@@ -4,9 +4,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DB209 Chapter1</title>
+    <title>Guess Number</title>
+    <style>
+        body{
+            background-color: rgb(88, 15, 172);
+        }
+div{background-color: darkred;
+    width: 960px;
+height: 100%;}
+#result{color: rgb(199, 50, 50);}
+.try{
+    font-size: 1.5em;
+}
+    </style>
 </head>
 <body>
-    <h1>Hello mafcker world!</h1>
+    <div>
+        <h1>ทายซิ</h1>
+    <p>เรามีตัวเลข1-100 ลองทายซิว่าเลขอะไร ให้ทายได้ไม่เกิน 10 ครั้ง    </p>
+    <p id="result">ลองซิ</p>
+    <p class="try">คุณทายไป 0 ครั้ง</p>
+    <p class="try"[]></p>
+</div>
+<script>
+let Number;
+let guesses;
+let tries;
+let answer;
+Number=Math.floor(Math.random()*100)+1;
+guesses = [];
+for(tries = 1; tries <= 10; tries++) {
+    answer = +prompt('ทายมาเลย');
+    guesses.push(answer);
+    if(answer > Number) {
+        alert('มากไป');
+}
+else if(answer < Number) {
+    alert('น้อยไป');
+}
+    else {
+        alert('ถูกต้องแล้วค้าบบ');
+    break;
+}
+}
+document.querySelectorAll('.try')[0].innerHTML = 'คุณทายไป' + tries + 'ครั้ง';
+document.querySelectorAll('.try')[1].innerHTML = guesses
+</script>
 </body>
 </html>
